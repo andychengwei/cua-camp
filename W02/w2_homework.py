@@ -6,7 +6,11 @@ click_points = [(300, 200), (300, 400), (300, 600)]
 
 def click_at(x, y, pause=0.5):
     # TODO: 移到 (x, y) 再点一下（用 pyautogui.moveTo + click）
-    pass
+    pyautogui.moveTo(x, y)
+    pyautogui.click()
+    time.sleep(pause)
 
 time.sleep(2)
 # TODO: 用 for 遍历 click_points，对每个坐标调用 click_at
+for x, y in click_points:
+    click_at(x, y)
